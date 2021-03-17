@@ -69,23 +69,32 @@ The filename of the HTML file that this post was extracted from.
 
 #### links
 
-Media links found in the body text of a post. Multiple instances are sepearated with a '\n'
+Media links found in the body text of a post. Multiple instances are seperated with a '\n'
 
 #### domains
 
-The domain names of the parsed media links. Multiple instances are sepearated with a '\n'
+The domain names of the parsed media links. Multiple instances are seperated with a '\n'
 
 #### hashtags 
 
-The hashtags found in the body text of a post. Multiple instances are sepearated with a '\n'
+The hashtags found in the body text of a post. Multiple instances are seperated with a '\n'
 
 #### user_mentions
 
-Mentions of other users within the body text of a post. One challenge here is that there is no way to tell if a user is mentioning another parler user or using the "@" symbol to promote an account on another platform, or to reference some other public figure. For instance, a user may mention @BarackObama to bring attention to Barack Obama the public figure, but Barack Obama the public figure has no parler account. Multiple instances are sepearated with a '\n'
+Mentions of other users within the body text of a post. One challenge here is that there is no way to tell if a user is mentioning another parler user or using the "@" symbol to promote an account on another platform, or to reference some other public figure. For instance, a user may mention @BarackObama to bring attention to Barack Obama the public figure, but Barack Obama the public figure has no parler account. Multiple instances are seperated with a '\n'
 
 #### body_text_cleaned
 
-This the cleaned
+This the body text shared in the post, but with the hashtags or media links removed.
+
+
+### Data Conlclusions
+
+Though there is still a considerable amount of work to be to ensure that this dataset as clean and comprehensive as possible, there is more than enough info available for data entusisasts to utilize!
+
+## Preliminary Large Scale Analysis
+
+The principle
 
 
 
