@@ -29,7 +29,34 @@ Then, I used the BeautifulSoup4 four library to extract relevant information fro
 
 ## The Dataset itself, explained
 
-I will now walk through all the shared .csv files. Notice that there are two shared .csv files, the 'master' csv file, and the 'deduped' csv file. The master file contains all of the posts shared, while the 'deduped' csv file has all of the
+Notice that there are two shared .csv files, the 'master' csv file, and the 'deduped' csv file. The master file contains all of the posts shared, while the 'deduped' removes all duplicate posts within the dataset (posts that have the same text and are by the same author)
+
+Let's walk through the each column in the .csv dataset.
+
+Each column represent scraped post.
+
+### user_page
+
+The handle of the user who's timeline was scraped in the data cleaning process.
+
+### author_username
+
+The handle of the author of the post. If this author's username matches the "user_page" handle, then this was an original post (the user who's timeline was scrapped and the author of the post are the same user). If the author's username and the "user_page" handle are different, then the "user_page" user 'echoed' this post, or interacted with in in some way for this post (that was not their own) to appear on their timeline.
+
+### author_name
+
+The screename of the author of the post.
+
+### impression count
+
+This a summary metric used to measure engagement on a post. Though I do not know the exact calculations that Parler uses to compute impressions, it is some kind of composite combination of views, comments, upvotes, and echoes of a post. Many posts in either did not have impressions data or extracting it was nontrivial. I used "-1" to denote that a post has no impressions data. A future goal will be to rexamine the impressions data extraction process to collect more engagement data.
+
+### 
+
+
+
+
+
 
 
 
