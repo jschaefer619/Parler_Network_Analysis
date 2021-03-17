@@ -88,9 +88,9 @@ Mentions of other users within the body text of a post. One challenge here is th
 This the body text shared in the post, but with the hashtags or media links removed.
 
 
-### Data Conlclusions
+### Data Conclusions
 
-Though there is still a considerable amount of work to be to ensure that this dataset as clean and comprehensive as possible, there is more than enough info available for data entusisasts to utilize!
+Though there is still a considerable amount of work to be to ensure that this dataset as clean and comprehensive as possible, there is more than enough info available for data entusiasts to dive into!
 
 ## Preliminary Large Scale Analysis
 
