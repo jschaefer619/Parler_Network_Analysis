@@ -35,55 +35,55 @@ Let's walk through the each column in the .csv dataset.
 
 Each column represent scraped post.
 
-### user_page
+#### user_page
 
 The handle of the user who's timeline was scraped in the data cleaning process.
 
-### author_username
+#### author_username
 
 The handle of the author of the post. If this author's username matches the "user_page" handle, then this was an original post (the user who's timeline was scrapped and the author of the post are the same user). If the author's username and the "user_page" handle are different, then the "user_page" user 'echoed' this post, or interacted with in in some way for this post (that was not their own) to appear on their timeline.
 
-### author_name
+#### author_name
 
 The screename of the author of the post.
 
-### impression count
+#### impression count
 
 This a summary metric used to measure engagement on a post. Though I do not know the exact calculations that Parler uses to compute impressions, it is some kind of composite combination of views, comments, upvotes, and echoes of a post. Many posts in either did not have impressions data or extracting it was nontrivial. I used "-1" to denote that a post has no impressions data. A future goal will be to rexamine the impressions data extraction process to collect more engagement data.
 
-### timestamp
+#### timestamp
 
 Temporal info scrapped from the Parler webpages. This data is relative and is formatted as a string which reads, for instance, as "3 days ago" or "1 week ago." From looking at the Post information, I am nearly certain that this data was scraped on January 10th, 2021. So, a post that was "4 days ago" was on the day of the Capitol Riots. Another future goal would be to further investigate the relative data, then provide a clear, machine readable timestamp.
 
-### body_text
+#### body_text
 
 The body text of the Parler post. Other user mentions, hashtags, and media links are included here.
 
-### path
+#### path
 
 The filename of the HTML file that this post was extracted from.
 
-### is_original_post
+#### is_original_post
 
 "1" if the handle of "user_page" is the same as the handle of "author_username" (This is an original post) "0" if the handles do not match (The "user_page" user echoed this post or engaged with it in some manner, but the post was not their own.)
 
-### links
+#### links
 
 Media links found in the body text of a post. Multiple instances are sepearated with a '\n'
 
-### domains
+#### domains
 
 The domain names of the parsed media links. Multiple instances are sepearated with a '\n'
 
-### hashtags 
+#### hashtags 
 
 The hashtags found in the body text of a post. Multiple instances are sepearated with a '\n'
 
-### user_mentions
+#### user_mentions
 
 Mentions of other users within the body text of a post. One challenge here is that there is no way to tell if a user is mentioning another parler user or using the "@" symbol to promote an account on another platform, or to reference some other public figure. For instance, a user may mention @BarackObama to bring attention to Barack Obama the public figure, but Barack Obama the public figure has no parler account. Multiple instances are sepearated with a '\n'
 
-### body_text_cleaned
+#### body_text_cleaned
 
 This the cleaned
 
