@@ -148,6 +148,17 @@ When the user hovers their mouse over the middle (which will now be referred to 
 
 The principle way users will progress through the network is by clicking on another node that is connected to the current main node. Upon clicking, the clicked node will become the new 'main' node, and all of this new node's connections will be generated within in the web tool. Below are some diagrams showing how the user will interact with this web tool, at a higher level of abstraction.
 
+This diagram represents the user's starting point into the network. The centered blue node is the current 'main' node. The dotted outer lines around the node represent potential connections the user can select.
+
+This diagram represents the 2nd step into the network. From the prior main node, the user selected a connection, thus making the network shift to a new main node.  The old main node is now grey.
+
+This diagram represents the user's 5th step into the network. The user has now visited five nodes in total: The current 'main' node in blue, and four prior nodes. The grey node that is the greatest distance (when counting edges) is the node the user started on when beginning to use the web tool.
+
+This final diagram represents the user's 6th step into the network. Notice that there are still only five nodes (and their potential connections) being represented. The original node is no longer represented. Be aware, the new blue node is no longer centered simply to communicate the prior idea better in a fixed image. In the actual implementation, it will be centered.
+
+This design decision to a put a 'five node memory' onto the network is an intentional way to limit the experience. This limitation should effectively manage the size of the network - simply allowing the user to navigate through all of the nodes in this data would be unmanageable, at the user experience level and the computational / connecting with online database level.
+
+Furthermore, this 'five node limit' implicitly encourages users to get 'lost in the network.' Yes, users can make decisions while navigating the network, but the overall structure will remain mystified... until they spend some time within the web app. Ideally, the initial feeling would be that users are subjectively, 'lost in a crowd' - trying to make sense of the disparate and provocative information. But with time, my hope is that users learn some of the larger themes within the corpus, and will end up finding themselves returning to key nodes. Organically, users will begin to understand what happend on January 6th, 2021, as recorded by Parler.
 
 
 ### Implementation Progress
