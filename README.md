@@ -129,7 +129,24 @@ So, my goal became: build a bespoke tool for users to visualize the conversation
 
 Tenet (4) might be a somewhat contentious decision. Though I do believe that users should be accountable for their words (and many have began projects doing just this) I do believe that the handles, within the web tool, should remain anonymzed.
 
-### The Prototype
+### An Early Prototype
+
+I've implemented starting prototype within figma. Below is a partial screenshot of the prototype.
+
+
+You can view the full prototype through this figma link.
+
+This will be a multimode Network. Each node can be one of three types:
+
+- User node (represented with circle)
+- Hashtag node (represented with square)
+- Domain node (represented with triangle)
+
+There are a number of ways nodes can interact with each other. User nodes can be connected via "Mentions User" or "Echoes Post" relationships. Similarly, Hashtags and Domains can be connected to user nodes by "Includes Hashtag" or "Includes Domain" relationships, respectively. Note that these connections are currently directional in the prototype, making this a directed Network. This is one intuitive way of initially representing these networks, but it may be useful to make this network undirected in future prototypes.
+
+When the user hovers their mouse over the middle (which will now be referred to as the 'main' node), more detailed, Body text information will then appear over the node.
+
+The principle way users will progress through the network is by clicking on another node that is connected to the current main node. Upon clicking, the clicked node will become the new 'main' node, and all of this new node's connections will be generated within in the web tool. Below are some diagrams showing how the user will interact with this web tool, at a higher level of abstraction.
 
 
 
