@@ -92,9 +92,63 @@ This the body text shared in the post, but with the hashtags or media links remo
 
 Though there is still a considerable amount of work to be to ensure that this dataset as clean and comprehensive as possible, there is more than enough info available for data entusiasts to dive into!
 
-## Preliminary Large Scale Analysis
+## Voyant Tools Preliminary Large Scale Analysis
 
-The principle
+It is a goal of this project to encourage users to engage with the parler in a less abstracted a mediated way. However, some initial large-scale analysis is still useful.
+
+I encourgae visitors to go to this VoyantTools link with three 'sub-corpuses' of the dataset included: the hastags, the cleaned body texts, and the domains.
+
+Some qualitative I noticed during my data explorations:
+
+- Brietbart still has a sizable presense on Parler, but it seems that other alt-right media outlets have large audiences
+- Trump is central in the overall discourse on Parler
+- There is a large amount of Hostility Towards former VP Mike Pence for aknowldeging Joe Biden's victory
+- Many users go to Parler after being banned or suspended on other social media platforms
+
+## Why Network Analysis - An why build a tool for this?
+
+The strengths and weakness of this corpus informed my decision to focus on Network Analysis for this project. This data was not collected through an API (leading to much effort being put - and even more needed - to clean and organize this data), so some important information is missing/obscured. But this data was collected through scraping user timelines. This scrapping method is conducive to network analysis, each post was associated with both the user that shared this post, and the author of the post.
+
+There are many fantastic Network Analysis tools avialable. Gephi is a a great, open-source choice. These tool are powerful ways to visualize the overall strucure of a network. 
+
+But there is something that is obscured by this more traditional approach. The content of the posts themselves is lost in this abstraction.
+
+This ties back to a central goal of this project: to provide a less mediated access to the events on January 6th, as seen on Parler. It is difficult to escape from media echo chambers. Most people who are critical of Parler, and critical of the events on January 6th have likely spent little or no time on the platform. Once again, take caution: The posts on Parler contain harsh language and hateful, extremist views. But, as the public observed on January 6th, what happens on these platforms is real. I hope to provide access to this discourse - even in it's unpleasant details - so the larger public can better understand how this event came to be.
+
+Providing better access to the dataset is an importnant start, but I beleive there is more work to be done to provide an accessible way for all to engage with these conversation.
+
+So, my goal became: build a bespoke tool for users to visualize the conversations on Parler on the capitol riots.
+
+### Design Tenets
+
+(1) The tool must be accessible through the web with extremely little / no configuration from users
+(2) Body Text from posts must be fully readable
+(3) A loose network structure is to be retained: users should understand how one post is related to another
+(4) The handles or screennames of users themselves should be anonymized within the web tool
+
+
+Tenet (4) might be a somewhat contentious decision. Though I do believe that users should be accountable for their words (and many have began projects doing just this) I do believe that the handles, within the web tool, should remain anonymzed.
+
+### The Prototype
+
+
+
+### Implementation Progress
+
+Currently, the prototype is in the early stages of development. I am using the D3 library to implement my online network. There were many near 'plug and play' online network analysis tools out there, but D3 strikes a nice balance of high and low level tools for me to implement the network as I see fit. In many ways, it is the 'industry standard' for general purpose data visualization. There is a bit of learning curve, however.
+
+Sending and recieving requests is something that I both excited for and dread. I have had some experience managing the website/server interactions, so I am excited to revist and continue to develop those skills. 
+
+### Reflections
+
+This project is still very early in lifecycle. But despite the difficulties of this quarter (and of the entire past year, frankly), I feel as though this project has developed my digital humanities skills considerably.
+
+The most rewarding part of this project, thus far, is working with 
+
+
+
+
+
 
 
 
