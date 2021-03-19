@@ -1,6 +1,6 @@
 # Introduction
 
-On January 6th, 2021, a group of right-wing Insurrectionists stormed the US Capitol. The Insurrectionists were able to breach the US Captiol Building itself, leading to the evacuation of the Senate and House Chambers. [Five people died and over 140 were injured] (https://www.theguardian.com/us-news/2021/jan/08/capitol-attack-police-officer-five-deaths).
+On January 6th, 2021, a group of right-wing Insurrectionists stormed the US Capitol. The Insurrectionists were able to breach the US Captiol Building itself, leading to the evacuation of the Senate and House Chambers. [Five people died and over 140 were injured](https://www.theguardian.com/us-news/2021/jan/08/capitol-attack-police-officer-five-deaths).
 
 The role of the right wing social media website Parler was instrumental in the planning and publicity of the Insurrection. Many Parler users expressed pro-trump, violent sentiment on the Platform. In response to Parler's culpability in this event, [Amazon Web Services dropped support for managing parler's cloud infrastrucure](https://slate.com/technology/2021/02/parler-capitol-riot-proud-boys-skysilk.html). This led to a month long disruption in Parler's service, but the service is now back online.
 
@@ -25,7 +25,7 @@ This data was collected from [Distributed Denial of Secrets](https://ddosecrets.
 
 I began by downloading the .torrent seed shared by DDoS. Once decompressed, the downloaded information was ~23,500 html webpages (Note that the cloud computing service I used to unzip the downloaded torrent file did crash after unizipping for some time, so there may be more information - will update this page soon to reflect these changes). Though these webpages did not follow an exact uniform format, virtually all of these pages were user pages: the page contained information about a user, including their handle, their screen name, and then their most trecent posts or posts they have recently 'echoed' (retweeted).
 
-Then, I used the BeautifulSoup4 four library to extract relevant information from these html files. BeatuiflSoup4 is a useful library for parsing data from HTML and XML files. Regular expressions were also used to extract some detailed information, and to clean the dataset. Pandas was also used to effectively manage the transition from raw data to a compatible .csv format.
+Then, I used the [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) library to extract relevant information from these html files. BeatuiflSoup4 is a useful library for parsing data from HTML and XML files. Regular expressions were also used to extract some detailed information, and to clean the dataset. Pandas was also used to effectively manage the transition from raw data to a compatible .csv format.
 
 ## The Dataset itself, explained
 
@@ -96,7 +96,7 @@ Though there is still a considerable amount of work to be to ensure that this da
 
 It is a goal of this project to encourage users to engage with the parler in a less abstracted a mediated way. However, some initial large-scale analysis is still useful.
 
-I encourgae visitors to go to this VoyantTools visit voyant tools and upload the three with three 'sub-corpuses' of this dataset that I have linked in the repository. The three 'sub-corpuses' are as follows: the hastags, the cleaned body texts, and the domains.
+I encourage visitors to go to this VoyantTools visit voyant tools and upload the three with three 'sub-corpuses' of this dataset that I have linked in the repository. The three 'sub-corpuses' are as follows: the hastags, the cleaned body texts, and the domains.
 
 Some qualitative I noticed during my data explorations:
 
@@ -109,7 +109,7 @@ Some qualitative I noticed during my data explorations:
 
 The strengths and weakness of this corpus informed my decision to focus on Network Analysis for this project. This data was not collected through an API (leading to much effort being put - and even more needed - to clean and organize this data), so some important information is missing/obscured. But this data was collected through scraping user timelines. This scrapping method is conducive to network analysis, each post was associated with both the user that shared this post, and the author of the post.
 
-There are many fantastic Network Analysis tools avialable. Gephi is a a great, open-source choice. These tool are powerful ways to visualize the overall strucure of a network. Below is a Gephi generated network made by one of my peers using [Twitter Data about the Capitol Riots]().
+There are many fantastic Network Analysis tools avialable. Gephi is a a great, open-source choice. These tool are powerful ways to visualize the overall strucure of a network. Below is a Gephi generated network made by one of my peers using [Twitter Data about the Capitol Riots](https://capitolriots.humspace.ucla.edu).
 
 <img width="777" alt="example_network" src="https://user-images.githubusercontent.com/56604738/111742019-a9a13480-8844-11eb-9568-c02916baadfc.png">
 
@@ -176,7 +176,6 @@ This design decision to a put a 'five node memory' onto the network is an intent
 
 Furthermore, this 'five node limit' implicitly encourages users to get 'lost in the network.' Yes, users can make decisions while navigating the network, but the overall structure will remain mystified... until they spend some time within the web app. Ideally, the initial feeling would be that users are subjectively, 'lost in a crowd' - trying to make sense of the disparate and provocative information. But with time, my hope is that users learn some of the larger themes within the corpus, and will end up finding themselves returning to key nodes. Organically, users will begin to understand what happend on January 6th, 2021, as recorded by Parler.
 
-
 ### Implementation Progress
 
 Currently, the prototype is in the early stages of development. I am using the D3 library to implement my online network. There were many near 'plug and play' online network analysis tools out there, but D3 strikes a nice balance of high and low level tools for me to implement the network as I see fit. In many ways, it is the 'industry standard' for general purpose data visualization. There is a bit of learning curve, however.
@@ -191,7 +190,7 @@ The most rewarding part of this project, thus far, is working with ambigious dat
 
 Implementation excites me. Though I know I will run into barriers, developing my d3 skills and skills with web/database relations will be useful in the future. 
 
-Most importantly, this project gave me firsthand experience with the potential of digital humanities skills when applied to pressing social issues. The skills that I have learned both within and tagential to DH curriculm have guided me throughout this project. In our increasingly digitized society, I anticipate that there will be a need for people to capture, make meaning of, and share critical data.
+Most importantly, I feel as though I am engaging with a core part of the Digital Humanities Ethos - access and transparency. I am proud to be a part of the Digital Humanities community - the DH community and curriculum has equipped me with the skills I needed to get to where I am today. With this project, I hope to give something back.
 
 
 
