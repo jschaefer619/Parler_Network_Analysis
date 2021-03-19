@@ -1,29 +1,29 @@
 # Introduction
 
-On January 6th, 2021, a group of right-wing Insurrectionists stormed the US Capitol. The Insurrectionists were able to breach the US Captiol Building itself, leading to the evacuation of the Senate and House Chambers. Five people died and over 140 were injured (https://www.theguardian.com/us-news/2021/jan/08/capitol-attack-police-officer-five-deaths).
+On January 6th, 2021, a group of right-wing Insurrectionists stormed the US Capitol. The Insurrectionists were able to breach the US Captiol Building itself, leading to the evacuation of the Senate and House Chambers. [Five people died and over 140 were injured] (https://www.theguardian.com/us-news/2021/jan/08/capitol-attack-police-officer-five-deaths).
 
-The role of the right wing social media website Parler was instrumental in the planning and publicity of the Insurrection. Many Parler users expressed pro-trump, violent sentiment on the Platform. In response to Parler's culpability in this event, Amazon Web Services dropped support for managing parler's cloud infrastrucure. This led to a month long disruption in Parler's service, though the social media provider is not back online.
+The role of the right wing social media website Parler was instrumental in the planning and publicity of the Insurrection. Many Parler users expressed pro-trump, violent sentiment on the Platform. In response to Parler's culpability in this event, [Amazon Web Services dropped support for managing parler's cloud infrastrucure](https://slate.com/technology/2021/02/parler-capitol-riot-proud-boys-skysilk.html). This led to a month long disruption in Parler's service, but the service is now back online.
 
 # Purpose of this Project
 
-Though Parler may be back online, virtually all of the posts from the Riots are now no longer on the Parler Platform. This is a shame - these posts provide critical insight to a traumatic national event. Fortunately, savvy, self-proclaimed online hacktivists scraped the parler website for text and videos during the Insurrection. The videos from Parler have been coupled with open source facial identification software to hold the insurrectionists accountable.
+Parler may be back online, virtually all of the posts from the Riots are now no longer on the Parler Platform. This is a shame - these posts provide critical insight to a traumatic national event. Fortunately, [savvy researchers and online hacktivists](https://cybernews.com/news/70tb-of-parler-users-messages-videos-and-posts-leaked-by-security-researchers/) scraped the parler website for text and videos during the Insurrection. The videos from Parler have been [coupled with open source facial identification software](https://www.vice.com/en/article/xgz7g7/facial-recognition-parler-videos) to hold the insurrectionists accountable.
 
 This project uses the textual information from Parler to accomplish two things:
 
-1) Compile an cleaned, accessable dataset of the Parler textual data
-2) Build a online network analysis tool to allow users to critically engage with the conversations on Parler
++ 1) Compile an cleaned, accessable dataset of the Parler textual data
++ 2) Build a online network analysis tool to allow users to critically engage with the conversations on Parler
 
 ## Close Reading
 
-In this project, I will provide some visualizations that allows users to engage with the corpus as a whole. However, I do beleive that many users have already had the oppurtinuity to engage with the voices on Parler through an abstracted, mediated manner. No doubt, many people reading this have already read many of the excellent articles and think pieces by people far more knowledgeable than myself. So I hope to accomplish something unique with this project: allow users to engage with the texts of the Insurrectionist firsthand, in a manner that emulates their networked strucure. I hope to remove some of the abstraction and mediation from this Parler data - and I do hope this will be insightful in some way. Users should be warned: the content that will be viewed in this way does contain strong language and hate speech.
+In this project, I will provide some visualizations that allows users to engage with the corpus as a whole. However, I do beleive that many users have already had the oppurtinuity to engage with the voices on Parler through an abstracted, mediated manner. No doubt, most reading this have already engaged with some of the excellent media coverage on this event by talented journalists and academics. So I hope to accomplish something unique with this project: allow users to engage with the Parler texts of the Insurrectionist firsthand, in a manner that partially emulates Parler's networked strucure. I hope to remove some of the abstraction and mediation from this Parler data - and I hope that doing so will be insightful. Visitors should be warned: the content that will be viewed in this way does contain strong language and hate speech.
 
 # The Data
 
-This data was collected from DDos secrets, a Nonprofit group dedicated to make information public and accessible. Note that DDOsSecrets states that this a partial dataset from the capitol beaches. But from my hands on experience working with the data, it is certianly sufficient enough for some insight into the insurrection.  Let's breifly walk through my data and processing and cleaning methods.
+This data was collected from [Distributed Denial of Secrets](https://ddosecrets.com/wiki/Distributed_Denial_of_Secrets), a Nonprofit group dedicated to make information public and accessible. Note that DDoS states that this a [partial dataset](https://ddosecrets.com/wiki/Parler) of the capitol riots data. But from my hands on experience working with the data, it is certianly sufficient enough for some insight into the insurrection.  Let's breifly walk through my data and processing and cleaning methods.
 
 ## Data Processing
 
-I began by downloading the .torrent seed shared by DDos Secrets. Once decompressed, the downloaded information was ~23,500 html webpages (Note that the cloud computing service I used to unzip the downloaded torrent file did crash after unizipping for some time, so there may be more information - will update this page soon to reflect these changes). Though these webpages did not follow an exact uniform format, virtually all of these pages were user pages: the page contained information about a user, including their handle, their screen name, and then their most trecent posts or posts they have recently 'echoed' (retweeted).
+I began by downloading the .torrent seed shared by DDoS. Once decompressed, the downloaded information was ~23,500 html webpages (Note that the cloud computing service I used to unzip the downloaded torrent file did crash after unizipping for some time, so there may be more information - will update this page soon to reflect these changes). Though these webpages did not follow an exact uniform format, virtually all of these pages were user pages: the page contained information about a user, including their handle, their screen name, and then their most trecent posts or posts they have recently 'echoed' (retweeted).
 
 Then, I used the BeautifulSoup4 four library to extract relevant information from these html files. BeatuiflSoup4 is a useful library for parsing data from HTML and XML files. Regular expressions were also used to extract some detailed information, and to clean the dataset. Pandas was also used to effectively manage the transition from raw data to a compatible .csv format.
 
@@ -96,35 +96,37 @@ Though there is still a considerable amount of work to be to ensure that this da
 
 It is a goal of this project to encourage users to engage with the parler in a less abstracted a mediated way. However, some initial large-scale analysis is still useful.
 
-I encourgae visitors to go to this VoyantTools link with three 'sub-corpuses' of the dataset included: the hastags, the cleaned body texts, and the domains.
+I encourgae visitors to go to this VoyantTools visit voyant tools and upload the three with three 'sub-corpuses' of this dataset that I have linked in the repository. The three 'sub-corpuses' are as follows: the hastags, the cleaned body texts, and the domains.
 
 Some qualitative I noticed during my data explorations:
 
-- Brietbart still has a sizable presense on Parler, but it seems that other alt-right media outlets have large audiences
-- Trump is central in the overall discourse on Parler
-- There is a large amount of Hostility Towards former VP Mike Pence for aknowldeging Joe Biden's victory
-- Many users go to Parler after being banned or suspended on other social media platforms
++ Brietbart still has a sizable presense on Parler, but it seems that other alt-right media outlets have large audiences
++ Trump is central in the overall discourse on Parler
++ There is a large amount of Hostility Towards former VP Mike Pence for aknowldeging Joe Biden's victory
++ Many users go to Parler after being banned or suspended on other social media platforms
 
 ## Why Network Analysis - An why build a tool for this?
 
 The strengths and weakness of this corpus informed my decision to focus on Network Analysis for this project. This data was not collected through an API (leading to much effort being put - and even more needed - to clean and organize this data), so some important information is missing/obscured. But this data was collected through scraping user timelines. This scrapping method is conducive to network analysis, each post was associated with both the user that shared this post, and the author of the post.
 
-There are many fantastic Network Analysis tools avialable. Gephi is a a great, open-source choice. These tool are powerful ways to visualize the overall strucure of a network. 
+There are many fantastic Network Analysis tools avialable. Gephi is a a great, open-source choice. These tool are powerful ways to visualize the overall strucure of a network. Below is a Gephi generated network made by one of my peers using [Twitter Data about the Capitol Riots]().
 
-But there is something that is obscured by this more traditional approach. The content of the posts themselves is lost in this abstraction.
+<img width="777" alt="example_network" src="https://user-images.githubusercontent.com/56604738/111742019-a9a13480-8844-11eb-9568-c02916baadfc.png">
 
-This ties back to a central goal of this project: to provide a less mediated access to the events on January 6th, as seen on Parler. It is difficult to escape from media echo chambers. Most people who are critical of Parler, and critical of the events on January 6th have likely spent little or no time on the platform. Once again, take caution: The posts on Parler contain harsh language and hateful, extremist views. But, as the public observed on January 6th, what happens on these platforms is real. I hope to provide access to this discourse - even in it's unpleasant details - so the larger public can better understand how this event came to be.
+This graph is visually intriguing, and points of interests can be demarcated communicate interesting findings. But there is something that is obscured by this approach. The content of the Parler posts themselves is lost in this abstraction.
 
-Providing better access to the dataset is an importnant start, but I beleive there is more work to be done to provide an accessible way for all to engage with these conversation.
+This ties back to a central goal of this project: to provide a less mediated access to the events on January 6th, as seen on Parler.
+
+Providing access to a cleaned dataset is an important start, but I beleive there is more work to be done to provide an accessible way for all to engage with these conversation.
 
 So, my goal became: build a bespoke tool for users to visualize the conversations on Parler on the capitol riots.
 
 ### Design Tenets
 
-(1) The tool must be accessible through the web with extremely little / no configuration from users
-(2) Body Text from posts must be fully readable
-(3) A loose network structure is to be retained: users should understand how one post is related to another
-(4) The handles or screennames of users themselves should be anonymized within the web tool
++ (1) The tool must be accessible through the web with extremely little / no configuration from users
++ (2) Body Text from posts must be fully readable
++ (3) A loose network structure is to be retained: users should understand how one post is related to another
++ (4) The handles or screennames of users themselves should be anonymized within the web tool
 
 
 Tenet (4) might be a somewhat contentious decision. Though I do believe that users should be accountable for their words (and many have began projects doing just this) I do believe that the handles, within the web tool, should remain anonymzed.
@@ -135,7 +137,7 @@ I've implemented starting prototype within figma. Below is a partial screenshot 
 
 <img width="599" alt="low_level_diagram" src="https://user-images.githubusercontent.com/56604738/111734406-4f4da700-8837-11eb-85f6-ff4f606d371f.png">
 
-You can view the full prototype through this figma link.
+You can view the full prototype through this [Figma link](https://www.figma.com/file/DiSKgZuTfTPYRZgpJgVGBb/Parler-Network-Early-Prototype?node-id=0%3A1).
 
 This will be a multimode Network. Each node can be one of three types:
 
@@ -145,9 +147,7 @@ This will be a multimode Network. Each node can be one of three types:
 
 There are a number of ways nodes can interact with each other. User nodes can be connected via "Mentions User" or "Echoes Post" relationships. Similarly, Hashtags and Domains can be connected to user nodes by "Includes Hashtag" or "Includes Domain" relationships, respectively. Note that these connections are currently directional in the prototype, making this a directed Network. This is one intuitive way of initially representing these networks, but it may be useful to make this network undirected in future prototypes.
 
-<img width="599" alt="low_level_diagram" src="https://user-images.githubusercontent.com/56604738/111734406-4f4da700-8837-11eb-85f6-ff4f606d371f.png">
-
-When the user hovers their mouse over the middle (which will now be referred to as the 'main' node), more detailed, Body text information will then appear over the node.
+When the user hovers their mouse over the middle (which will now be referred to as the 'main') node, more detailed, Body text information will then appear over the node.
 
 The principle way users will progress through the network is by clicking on another node that is connected to the current main node. Upon clicking, the clicked node will become the new 'main' node, and all of this new node's connections will be generated within in the web tool. Below are some diagrams showing how the user will interact with this web tool, at a higher level of abstraction.
 
@@ -187,7 +187,11 @@ Sending and recieving requests is something that I both excited for and dread. I
 
 This project is still very early in lifecycle. But despite the difficulties of this quarter (and of the entire past year, frankly), I feel as though this project has developed my digital humanities skills considerably.
 
-The most rewarding part of this project, thus far, is working with 
+The most rewarding part of this project, thus far, is working with ambigious data. Though I still have have improvements to make the .hmtl parsing process, it was rewarding to take a vast amoung of unstructered information and make something useable from it. After these improvements and some more checks for the data's integrity, I am going to reach out to other media organizations and online communities with this dataset.
+
+Implementation excites me. Though I know I will run into barriers, developing my d3 skills and skills with web/database relations will be useful in the future. 
+
+Most importantly, this project gave me firsthand experience with the potential of digital humanities skills when applied to pressing social issues. The skills that I have learned both within and tagential to DH curriculm have guided me throughout this project. In our increasingly digitized society, I anticipate that there will be a need for people to capture, make meaning of, and share critical data.
 
 
 
