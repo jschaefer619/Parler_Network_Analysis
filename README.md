@@ -133,6 +133,7 @@ Tenet (4) might be a somewhat contentious decision. Though I do believe that use
 
 I've implemented starting prototype within figma. Below is a partial screenshot of the prototype.
 
+<img width="599" alt="low_level_diagram" src="https://user-images.githubusercontent.com/56604738/111734406-4f4da700-8837-11eb-85f6-ff4f606d371f.png">
 
 You can view the full prototype through this figma link.
 
@@ -144,17 +145,32 @@ This will be a multimode Network. Each node can be one of three types:
 
 There are a number of ways nodes can interact with each other. User nodes can be connected via "Mentions User" or "Echoes Post" relationships. Similarly, Hashtags and Domains can be connected to user nodes by "Includes Hashtag" or "Includes Domain" relationships, respectively. Note that these connections are currently directional in the prototype, making this a directed Network. This is one intuitive way of initially representing these networks, but it may be useful to make this network undirected in future prototypes.
 
+<img width="599" alt="low_level_diagram" src="https://user-images.githubusercontent.com/56604738/111734406-4f4da700-8837-11eb-85f6-ff4f606d371f.png">
+
 When the user hovers their mouse over the middle (which will now be referred to as the 'main' node), more detailed, Body text information will then appear over the node.
 
 The principle way users will progress through the network is by clicking on another node that is connected to the current main node. Upon clicking, the clicked node will become the new 'main' node, and all of this new node's connections will be generated within in the web tool. Below are some diagrams showing how the user will interact with this web tool, at a higher level of abstraction.
 
 This diagram represents the user's starting point into the network. The centered blue node is the current 'main' node. The dotted outer lines around the node represent potential connections the user can select.
 
+![Parler Project Diagrams](https://user-images.githubusercontent.com/56604738/111735161-c9326000-8838-11eb-8d09-775634bc6f8c.png)
+
 This diagram represents the 2nd step into the network. From the prior main node, the user selected a connection, thus making the network shift to a new main node.  The old main node is now grey.
+
+![Parler Project Diagrams-2](https://user-images.githubusercontent.com/56604738/111735400-32b26e80-8839-11eb-86d3-f52e260f2ed1.png)
+
+This diagram represents the 3rd step into the network. Now the user has selected another main node. Three nodes, and their potential connections, are represented in the network.
+
+![Parler Project Diagrams-3](https://user-images.githubusercontent.com/56604738/111735522-65f4fd80-8839-11eb-83dc-d0777dd2aeaa.png)
 
 This diagram represents the user's 5th step into the network. The user has now visited five nodes in total: The current 'main' node in blue, and four prior nodes. The grey node that is the greatest distance (when counting edges) is the node the user started on when beginning to use the web tool.
 
+![Parler Project Diagrams-4](https://user-images.githubusercontent.com/56604738/111735543-6db4a200-8839-11eb-94dd-8ad3985b1a9f.png)
+
 This final diagram represents the user's 6th step into the network. Notice that there are still only five nodes (and their potential connections) being represented. The original node is no longer represented. Be aware, the new blue node is no longer centered simply to communicate the prior idea better in a fixed image. In the actual implementation, it will be centered.
+
+![Parler Project Diagrams-5](https://user-images.githubusercontent.com/56604738/111735557-74dbb000-8839-11eb-94e5-0f262e4b1c38.png)
+
 
 This design decision to a put a 'five node memory' onto the network is an intentional way to limit the experience. This limitation should effectively manage the size of the network - simply allowing the user to navigate through all of the nodes in this data would be unmanageable, at the user experience level and the computational / connecting with online database level.
 
