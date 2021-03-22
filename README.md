@@ -1,39 +1,39 @@
 # Introduction
 
-On January 6th, 2021, a group of right-wing Insurrectionists stormed the US Capitol. The Insurrectionists were able to breach the US Captiol Building itself, leading to the evacuation of the Senate and House Chambers. [Five people died and over 140 were injured](https://www.theguardian.com/us-news/2021/jan/08/capitol-attack-police-officer-five-deaths).
+On January 6th, 2021, a group of right-wing Insurrectionists stormed the US Capitol. The Insurrectionists were able to breach the US Capitol Building itself, leading to the evacuation of the Senate and House Chambers. [Five people died and over 140 were injured](https://www.theguardian.com/us-news/2021/jan/08/capitol-attack-police-officer-five-deaths).
 
-The role of the right wing social media website Parler was instrumental in the planning and publicity of the Insurrection. Many Parler users expressed pro-trump, violent sentiment on the Platform. In response to Parler's culpability in this event, [Amazon Web Services dropped support for managing parler's cloud infrastrucure](https://slate.com/technology/2021/02/parler-capitol-riot-proud-boys-skysilk.html). This led to a month long disruption in Parler's service, but the service is now back online.
+The right-wing social media website Parler was instrumental to the Insurrection - it was a major part of the commmunication infrastructure for the extremists: leading to the planning, execution, and virality of the Riots. Many Parler users expressed pro-trump, conspiratorial, and violent sentiment on the Platform. In response to Parler's culpability in this event, [Amazon Web Services dropped support for managing parler's cloud infrastructure](https://slate.com/technology/2021/02/parler-capitol-riot-proud-boys-skysilk.html). This led to a month long disruption in Parler's service, but the service is now back online.
 
 # Purpose of this Project
 
-Parler may be back online, virtually all of the posts from the Riots are now no longer on the Parler Platform. This is a shame - these posts provide critical insight to a traumatic national event. Fortunately, [savvy researchers and online hacktivists](https://cybernews.com/news/70tb-of-parler-users-messages-videos-and-posts-leaked-by-security-researchers/) scraped the parler website for text and videos during the Insurrection. The videos from Parler have been [coupled with open source facial identification software](https://www.vice.com/en/article/xgz7g7/facial-recognition-parler-videos) to hold the insurrectionists accountable.
+Parler may be back online, but virtually all of the posts from the Riots are no longer on the Parler Platform. This is a shame - these posts provide critical insight to a traumatic national event. Fortunately, [savvy researchers and online hacktivists](https://cybernews.com/news/70tb-of-parler-users-messages-videos-and-posts-leaked-by-security-researchers/) scraped Parler websites for text and videos of the Insurrection. The videos from Parler have been [coupled with open source facial identification software](https://www.vice.com/en/article/xgz7g7/facial-recognition-parler-videos) to hold some insurrectionists accountable.
 
-This project uses the textual information from Parler to accomplish two things:
+This project uses the textual information from Parler data scrapes to accomplish two things:
 
-+ 1) Compile an cleaned, accessable dataset of the Parler textual data
++ 1) Compile an cleaned, accessible dataset of the Parler text data
 + 2) Build a online network analysis tool to allow users to critically engage with the conversations on Parler
 
 ## Close Reading
 
-In this project, I will provide some visualizations that allows users to engage with the corpus as a whole. However, I do beleive that many users have already had the oppurtinuity to engage with the voices on Parler through an abstracted, mediated manner. No doubt, most reading this have already engaged with some of the excellent media coverage on this event by talented journalists and academics. So I hope to accomplish something unique with this project: allow users to engage with the Parler texts of the Insurrectionist firsthand, in a manner that partially emulates Parler's networked strucure. I hope to remove some of the abstraction and mediation from this Parler data - and I hope that doing so will be insightful. Visitors should be warned: the content that will be viewed in this way does contain strong language and hate speech.
+A macro-level analysis is often suitable for a large corpus of data. However, I believe that many people have already had the opportunity to engage with the voices on Parler through an abstracted, mediated manner. No doubt, most reading this have already engaged with some of the excellent media coverage on this event by talented journalists and academics. So I hope to accomplish something unique with this project: allow users to engage with the Parler texts of the Insurrectionist firsthand, in a manner that partially emulates Parler's networked structure. I hope to remove some of the abstraction and mediation from this Parler data - and I hope that doing so will be insightful. Visitors should be warned: the content that will be viewed in this way does contain strong language and hate speech.
 
 # The Data
 
-This data was collected from [Distributed Denial of Secrets](https://ddosecrets.com/wiki/Distributed_Denial_of_Secrets), a Nonprofit group dedicated to make information public and accessible. Note that DDoS states that this a [partial dataset](https://ddosecrets.com/wiki/Parler) of the capitol riots data. But from my hands on experience working with the data, it is certianly sufficient enough for some insight into the insurrection.  Let's breifly walk through my data and processing and cleaning methods.
+This data was collected from [Distributed Denial of Secrets](https://ddosecrets.com/wiki/Distributed_Denial_of_Secrets), a Nonprofit group dedicated to make information public and accessible. Note that DDoS states that this a [partial dataset](https://ddosecrets.com/wiki/Parler) of the capitol riots data. But from my hands on experience working with the data, it is certainly sufficient enough for some insight into the insurrection.  Let's breifly walk through my data and processing and cleaning methods.
 
 ## Data Processing
 
-I began by downloading the .torrent seed shared by DDoS. Once decompressed, the downloaded information was ~23,500 html webpages (Note that the cloud computing service I used to unzip the downloaded torrent file did crash after unizipping for some time, so there may be more information - will update this page soon to reflect these changes). Though these webpages did not follow an exact uniform format, virtually all of these pages were user pages: the page contained information about a user, including their handle, their screen name, and then their most trecent posts or posts they have recently 'echoed' (retweeted).
+I began by downloading the .torrent seed shared by DDoS. Once decompressed, the downloaded information was ~23,500 html webpages (Note that the cloud computing service I used to unzip the downloaded torrent file did crash after unizipping for some time, so there may be more information - will update this page soon to reflect these changes). Though these webpages did not follow an exact uniform format, virtually all of these pages were user pages: the page contained information about a user, including their handle, their screen name, and then their most recent posts or posts they have recently 'echoed' (retweeted).
 
-Then, I used the [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) library to extract relevant information from these html files. BeatuiflSoup4 is a useful library for parsing data from HTML and XML files. Regular expressions were also used to extract some detailed information, and to clean the dataset. Pandas was also used to effectively manage the transition from raw data to a compatible .csv format.
+Then, I used the [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) library to extract relevant information from these html files. BeautifulSoup4 is a useful library for parsing data from HTML and XML files. Regular expressions were also used to extract some detailed information, and to clean the dataset. Pandas was also used to effectively manage the transition from raw data to a compatible .csv format.
 
 ## The Dataset itself, explained
 
-Notice that there are two shared .csv files, the 'master' csv file, and the 'deduped' csv file. The master file contains all of the posts shared, while the 'deduped' removes all duplicate posts within the dataset (posts that have the same text and are by the same author)
+Go to [this website's Github Repository to view the data](https://github.com/jschaefer619/Parler_Network_Analysis). Notice that there are two shared .csv files, the 'master' csv file, and the 'deduped' csv file. The master file contains all of the posts shared, while the 'deduped' removes all duplicate posts within the dataset (posts that have the same text and are by the same author)
 
 Let's walk through the each column in the .csv dataset.
 
-Each column represent scraped post.
+Each column represents one scraped post.
 
 #### user_page
 
@@ -49,7 +49,7 @@ The screename of the author of the post.
 
 #### impression count
 
-This a summary metric used to measure engagement on a post. Though I do not know the exact calculations that Parler uses to compute impressions, it is some kind of composite combination of views, comments, upvotes, and echoes of a post. Many posts in either did not have impressions data or extracting it was nontrivial. I used "-1" to denote that a post has no impressions data. A future goal will be to rexamine the impressions data extraction process to collect more engagement data.
+This a summary metric used to measure engagement on a post. Though I do not know the exact calculations that Parler uses to compute impressions, it is some kind of composite combination of views, comments, upvotes, and echoes of a post. Many posts in either did not have impressions data or extracting it was nontrivial. I used "-1" to denote that a post has no impressions data. A future goal will be to reexamine the impressions data extraction process to collect more engagement data.
 
 #### timestamp
 
@@ -81,35 +81,35 @@ The hashtags found in the body text of a post. Multiple instances are seperated 
 
 #### user_mentions
 
-Mentions of other users within the body text of a post. One challenge here is that there is no way to tell if a user is mentioning another parler user or using the "@" symbol to promote an account on another platform, or to reference some other public figure. For instance, a user may mention @BarackObama to bring attention to Barack Obama the public figure, but Barack Obama the public figure has no parler account. Multiple instances are seperated with a '\n'
+Mentions of other users within the body text of a post. One challenge here is that there is no way to tell if a user is mentioning another parler user or using the "@" symbol to promote an account on another platform, or to reference some other public figure. For instance, a user may mention @BarackObama to bring attention to Barack Obama the public figure, but Barack Obama himself has no parler account. Multiple instances are seperated with a '\n'
 
 #### body_text_cleaned
 
-This the body text shared in the post, but with the hashtags or media links removed.
+This the body text shared in the post, but with all hashtags or media links removed.
 
 
 ### Data Conclusions
 
-Though there is still a considerable amount of work to be to ensure that this dataset as clean and comprehensive as possible, there is more than enough info available for data entusiasts to dive into!
+Though there is still a considerable amount of work to be to ensure that this dataset as clean and comprehensive as possible, there is more than enough info available for data enthusiasts to dive into!
 
 ## Voyant Tools Preliminary Large Scale Analysis
 
 It is a goal of this project to encourage users to engage with the parler in a less abstracted a mediated way. However, some initial large-scale analysis is still useful.
 
-I encourage visitors to go to this VoyantTools visit voyant tools and upload the three with three 'sub-corpuses' of this dataset that I have linked in the repository. The three 'sub-corpuses' are as follows: the hastags, the cleaned body texts, and the domains.
+I encourage visitors to go to the [VoyantTools](https://voyant-tools.org) and upload the three with three 'sub-corpuses' of this dataset that I have [linked in the repository](https://github.com/jschaefer619/Parler_Network_Analysis). The three 'sub-corpuses' are as follows: the hashtags, the cleaned body texts, and the domains.
 
 Some qualitative I noticed during my data explorations:
 
-+ Brietbart still has a sizable presense on Parler, but it seems that other alt-right media outlets have large audiences
++ Brietbart still has a sizable presence on Parler, but it seems that other alt-right media outlets have large audiences
 + Trump is central in the overall discourse on Parler
-+ There is a large amount of Hostility Towards former VP Mike Pence for aknowldeging Joe Biden's victory
++ There is a large amount of Hostility Towards former VP Mike Pence for aknowledging Joe Biden's victory
 + Many users go to Parler after being banned or suspended on other social media platforms
 
 ## Why Network Analysis - An why build a tool for this?
 
 The strengths and weakness of this corpus informed my decision to focus on Network Analysis for this project. This data was not collected through an API (leading to much effort being put - and even more needed - to clean and organize this data), so some important information is missing/obscured. But this data was collected through scraping user timelines. This scrapping method is conducive to network analysis, each post was associated with both the user that shared this post, and the author of the post.
 
-There are many fantastic Network Analysis tools avialable. Gephi is a a great, open-source choice. These tool are powerful ways to visualize the overall strucure of a network. Below is a Gephi generated network made by one of my peers using [Twitter Data about the Capitol Riots](https://capitolriots.humspace.ucla.edu).
+There are many fantastic Network Analysis tools avaliable. Gephi is a a great, open-source choice. These tool are powerful ways to visualize the overall structure of a network. Below is a Gephi generated network made by one of my peers using [Twitter Data about the Capitol Riots](https://capitolriots.humspace.ucla.edu).
 
 <img width="777" alt="example_network" src="https://user-images.githubusercontent.com/56604738/111742019-a9a13480-8844-11eb-9568-c02916baadfc.png">
 
@@ -129,7 +129,7 @@ So, my goal became: build a bespoke tool for users to visualize the conversation
 + (4) The handles or screennames of users themselves should be anonymized within the web tool
 
 
-Tenet (4) might be a somewhat contentious decision. Though I do believe that users should be accountable for their words (and many have began projects doing just this) I do believe that the handles, within the web tool, should remain anonymzed.
+Tenet (4) might be a somewhat contentious decision. Though I do believe that users should be accountable for their words (and many have began projects doing just this) I do believe that the handles, within the web tool, should remain anonymized.
 
 ### An Early Prototype
 
@@ -149,7 +149,7 @@ There are a number of ways nodes can interact with each other. User nodes can be
 
 When the user hovers their mouse over the middle (which will now be referred to as the 'main') node, more detailed, Body text information will then appear over the node.
 
-The principle way users will progress through the network is by clicking on another node that is connected to the current main node. Upon clicking, the clicked node will become the new 'main' node, and all of this new node's connections will be generated within in the web tool. Below are some diagrams showing how the user will interact with this web tool, at a higher level of abstraction.
+The principle way users will progress through the network is by clicking on another node that is connected to the current main node. Upon clicking, the clicked node will become the new 'main' node, and all of this new node's connections will be generated within the web tool. Below are some diagrams showing how the user will interact with this web tool, at a higher level of abstraction.
 
 This diagram represents the user's starting point into the network. The centered blue node is the current 'main' node. The dotted outer lines around the node represent potential connections the user can select.
 
@@ -180,13 +180,13 @@ Furthermore, this 'five node limit' implicitly encourages users to get 'lost in 
 
 Currently, the prototype is in the early stages of development. I am using the D3 library to implement my online network. There were many near 'plug and play' online network analysis tools out there, but D3 strikes a nice balance of high and low level tools for me to implement the network as I see fit. In many ways, it is the 'industry standard' for general purpose data visualization. There is a bit of learning curve, however.
 
-Sending and recieving requests is something that I both excited for and dread. I have had some experience managing the website/server interactions, so I am excited to revist and continue to develop those skills. 
+Sending and receiving requests is something that I both excited for and dread. I have had some experience managing the website/server interactions, so I am excited to revist and continue to develop those skills. 
 
 ### Reflections
 
-This project is still very early in lifecycle. But despite the difficulties of this quarter (and of the entire past year, frankly), I feel as though this project has developed my digital humanities skills considerably.
+This project is still very early in its lifecycle. But despite the difficulties of this quarter (and of the entire past year, frankly), I feel as though this project has developed my digital humanities skills considerably.
 
-The most rewarding part of this project, thus far, is working with ambigious data. Though I still have have improvements to make the .hmtl parsing process, it was rewarding to take a vast amoung of unstructered information and make something useable from it. After these improvements and some more checks for the data's integrity, I am going to reach out to other media organizations and online communities with this dataset.
+The most rewarding part of this project, thus far, is working with ambiguous data. Though I still have have improvements to make the .hmtl parsing process, it was rewarding to take a vast amoung of unstructured information and make something useable from it. After these improvements and some more checks for the data's integrity, I am going to reach out to other media organizations and online communities with this dataset.
 
 Implementation excites me. Though I know I will run into barriers, developing my d3 skills and skills with web/database relations will be useful in the future. 
 
