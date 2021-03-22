@@ -94,7 +94,7 @@ Though there is still a considerable amount of work to be to ensure that this da
 
 ## Voyant Tools Preliminary Large Scale Analysis
 
-It is a goal of this project to encourage users to engage with the parler in a less abstracted a mediated way. However, some initial large-scale analysis is still useful.
+It is a goal of this project to encourage users to engage with the Parler in a less abstracted a mediated way. However, some initial large-scale analysis is still useful.
 
 I encourage visitors to go to the [VoyantTools](https://voyant-tools.org) and upload the three with three 'sub-corpuses' of this dataset that I have [linked in the repository](https://github.com/jschaefer619/Parler_Network_Analysis). The three 'sub-corpuses' are as follows: the hashtags, the cleaned body texts, and the domains.
 
@@ -133,7 +133,7 @@ Tenet (4) might be a somewhat contentious decision. Though I do believe that use
 
 ### An Early Prototype
 
-I've implemented starting prototype within figma. Below is a partial screenshot of the prototype.
+I've implemented starting prototype within Figma. Below is a partial screenshot of the prototype.
 
 <img width="599" alt="low_level_diagram" src="https://user-images.githubusercontent.com/56604738/111734406-4f4da700-8837-11eb-85f6-ff4f606d371f.png">
 
