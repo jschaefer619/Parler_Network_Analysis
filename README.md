@@ -137,7 +137,7 @@ I've implemented starting prototype within Figma. Below is a partial screenshot 
 
 <img width="599" alt="low_level_diagram" src="https://user-images.githubusercontent.com/56604738/111734406-4f4da700-8837-11eb-85f6-ff4f606d371f.png">
 
-You can view the full prototype through this [Figma link](https://www.figma.com/file/DiSKgZuTfTPYRZgpJgVGBb/Parler-Network-Early-Prototype?node-id=0%3A1).
+You can view the full prototype through this [Figma link](https://www.figma.com/proto/DiSKgZuTfTPYRZgpJgVGBb/Parler-Network-Early-Prototype?node-id=1%3A40&scaling=contain).
 
 This will be a multimode Network. Each node can be one of three types:
 
@@ -178,7 +178,7 @@ Furthermore, this 'five node limit' implicitly encourages users to get 'lost in 
 
 ### Implementation Progress
 
-Currently, the prototype is in the early stages of development. I am using the D3 library to implement my online network. There were many near 'plug and play' online network analysis tools out there, but D3 strikes a nice balance of high and low level tools for me to implement the network as I see fit. In many ways, it is the 'industry standard' for general purpose data visualization. There is a bit of learning curve, however.
+Currently, the prototype is in the early stages of development. I am using the [D3 library](https://d3js.org) to implement my online network. There were many near 'plug and play' online network analysis tools out there, but D3 strikes a nice balance of high and low level tools for me to implement the network as I see fit. In many ways, it is the 'industry standard' for general purpose data visualization. There is a bit of learning curve, however.
 
 Sending and receiving requests is something that I both excited for and dread. I have had some experience managing the website/server interactions, so I am excited to revist and continue to develop those skills. 
 
@@ -188,7 +188,7 @@ This project is still very early in its lifecycle. But despite the difficulties 
 
 The most rewarding part of this project, thus far, is working with ambiguous data. Though I still have have improvements to make the .hmtl parsing process, it was rewarding to take a vast amoung of unstructured information and make something useable from it. After these improvements and some more checks for the data's integrity, I am going to reach out to other media organizations and online communities with this dataset.
 
-Implementation excites me. Though I know I will run into barriers, developing my d3 skills and skills with web/database relations will be useful in the future. 
+Implementation excites me. Though I know I will run into barriers, developing my D3 skills and skills with web/database relations will be useful in the future. 
 
 Most importantly, I feel as though I am engaging with a core part of the Digital Humanities Ethos - access and transparency. I am proud to be a part of the Digital Humanities community - the DH community and curriculum has equipped me with the skills I needed to get to where I am today. With this project, I hope to give something back.
 
