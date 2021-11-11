@@ -136,7 +136,7 @@ Here is a screenshot of an early visualization of a partial subset (~ 2000 entri
 
 <img src="https://user-images.githubusercontent.com/56604738/141378102-f0cc5495-3b18-4ea1-ad93-c41757506f8c.png">
 
-Users can interact with this network diagram by navigating to downloading the 'vosviewer_parler_data.json' file linked in this repository, navigating to [VOSviewer Online](https://app.vosviewer.com/), then opening the downloaded file within the VOSviewer Online. 
+Users can interact with this network diagram by navigating to downloading the 'vosviewer_parler_data.json' file linked in this repository, navigating to [VOSviewer Online](https://app.vosviewer.com/), then opening the downloaded file within VOSviewer Online. 
 
 More details coming soon!
 
