@@ -98,7 +98,7 @@ It is a goal of this project to encourage users to engage with the Parler in a l
 
 I encourage visitors to go to the [VoyantTools](https://voyant-tools.org) and upload the three with three 'sub-corpuses' of this dataset that I have [linked in the repository](https://github.com/jschaefer619/Parler_Network_Analysis). The three 'sub-corpuses' are as follows: the hashtags, the cleaned body texts, and the domains.
 
-Some qualitative I noticed during my data explorations:
+Some qualitative observations:
 
 + Brietbart still has a sizable presence on Parler, but it seems that other alt-right media outlets have large audiences
 + Trump is central in the overall discourse on Parler
