@@ -126,73 +126,27 @@ So, my goal became: build a bespoke tool for users to visualize the conversation
 + (1) The tool must be accessible through the web with extremely little / no configuration from users
 + (2) Body Text from posts must be fully readable
 + (3) A loose network structure is to be retained: users should understand how one post is related to another
-+ (4) The handles or screennames of users themselves should be anonymized within the web tool
 
 
-Tenet (4) might be a somewhat contentious decision. Though I do believe that users should be accountable for their words (and many have began projects doing just this) I do believe that the handles, within the web tool, should remain anonymized.
+### An Interactive Prototype
 
-### An Early Prototype
+[VOSviewer Online](https://app.vosviewer.com/) is a powerful and flexible way to visualize network data online. As a part of my work in [UCLA's Holocaust and Genocide Studies Research Lab](), I developed a [tool to convert spreadsheet data into a VOSviewer readable file](https://github.com/jschaefer619/VOSviewer_triplet_translator).
 
-I've implemented starting prototype within Figma. Below is a partial screenshot of the prototype.
+Here is a screenshot of an early visualization of a partial subset (~ 2000 entries) of this Parler data.
 
-<img width="599" alt="low_level_diagram" src="https://user-images.githubusercontent.com/56604738/111734406-4f4da700-8837-11eb-85f6-ff4f606d371f.png">
+<img src="https://user-images.githubusercontent.com/56604738/141378102-f0cc5495-3b18-4ea1-ad93-c41757506f8c.png">
 
-You can view the full prototype through this [Figma link](https://www.figma.com/proto/DiSKgZuTfTPYRZgpJgVGBb/Parler-Network-Early-Prototype?node-id=1%3A40&scaling=contain).
+Users can interact with this network diagram by navigating to downloading the 'vosviewer_parler_data.json' file linked in this repository, navigating to [VOSviewer Online](https://app.vosviewer.com/), then opening the downloaded file within the VOSviewer Online. 
 
-This will be a multimode Network. Each node can be one of three types:
-
-- User node (represented with circle)
-- Hashtag node (represented with square)
-- Domain node (represented with triangle)
-
-There are a number of ways nodes can interact with each other. User nodes can be connected via "Mentions User" or "Echoes Post" relationships. Similarly, Hashtags and Domains can be connected to user nodes by "Includes Hashtag" or "Includes Domain" relationships, respectively. Note that these connections are currently directional in the prototype, making this a directed Network. This is one intuitive way of initially representing these networks, but it may be useful to make this network undirected in future prototypes.
-
-When the user hovers their mouse over the middle (which will now be referred to as the 'main') node, more detailed, Body text information will then appear over the node.
-
-The principle way users will progress through the network is by clicking on another node that is connected to the current main node. Upon clicking, the clicked node will become the new 'main' node, and all of this new node's connections will be generated within the web tool. Below are some diagrams showing how the user will interact with this web tool, at a higher level of abstraction.
-
-This diagram represents the user's starting point into the network. The centered blue node is the current 'main' node. The dotted outer lines around the node represent potential connections the user can select.
-
-![Parler Project Diagrams](https://user-images.githubusercontent.com/56604738/111735161-c9326000-8838-11eb-8d09-775634bc6f8c.png)
-
-This diagram represents the 2nd step into the network. From the prior main node, the user selected a connection, thus making the network shift to a new main node.  The old main node is now grey.
-
-![Parler Project Diagrams-2](https://user-images.githubusercontent.com/56604738/111735400-32b26e80-8839-11eb-86d3-f52e260f2ed1.png)
-
-This diagram represents the 3rd step into the network. Now the user has selected another main node. Three nodes, and their potential connections, are represented in the network.
-
-![Parler Project Diagrams-3](https://user-images.githubusercontent.com/56604738/111735522-65f4fd80-8839-11eb-83dc-d0777dd2aeaa.png)
-
-This diagram represents the user's 5th step into the network. The user has now visited five nodes in total: The current 'main' node in blue, and four prior nodes. The grey node that is the greatest distance (when counting edges) is the node the user started on when beginning to use the web tool.
-
-![Parler Project Diagrams-4](https://user-images.githubusercontent.com/56604738/111735543-6db4a200-8839-11eb-94dd-8ad3985b1a9f.png)
-
-This final diagram represents the user's 6th step into the network. Notice that there are still only five nodes (and their potential connections) being represented. The original node is no longer represented. Be aware, the new blue node is no longer centered simply to communicate the prior idea better in a fixed image. In the actual implementation, it will be centered.
-
-![Parler Project Diagrams-5](https://user-images.githubusercontent.com/56604738/111735557-74dbb000-8839-11eb-94e5-0f262e4b1c38.png)
-
-
-This design decision to a put a 'five node memory' onto the network is an intentional way to limit the experience. This limitation should effectively manage the size of the network - simply allowing the user to navigate through all of the nodes in this data would be unmanageable, at the user experience level and the computational / connecting with online database level.
-
-Furthermore, this 'five node limit' implicitly encourages users to get 'lost in the network.' Yes, users can make decisions while navigating the network, but the overall structure will remain mystified... until they spend some time within the web app. Ideally, the initial feeling would be that users are subjectively, 'lost in a crowd' - trying to make sense of the disparate and provocative information. But with time, my hope is that users learn some of the larger themes within the corpus, and will end up finding themselves returning to key nodes. Organically, users will begin to understand what happend on January 6th, 2021, as recorded by Parler.
-
-### Implementation Progress
-
-Currently, the prototype is in the early stages of development. I am using the [D3 library](https://d3js.org) to implement my online network. There were many near 'plug and play' online network analysis tools out there, but D3 strikes a nice balance of high and low level tools for me to implement the network as I see fit. In many ways, it is the 'industry standard' for general purpose data visualization. There is a bit of learning curve, however.
-
-Sending and receiving requests is something that I both excited for and dread. I have had some experience managing the website/server interactions, so I am excited to revist and continue to develop those skills. 
+More details coming soon!
 
 ### Reflections
 
-This project is still very early in its lifecycle. But despite the difficulties of this quarter (and of the entire past year, frankly), I feel as though this project has developed my digital humanities skills considerably.
+This repository was original developed as an undergraduate Capstone project for Digital Humanities.
 
-The most rewarding part of this project, thus far, is working with ambiguous data. Though I still have have improvements to make the .hmtl parsing process, it was rewarding to take a vast amoung of unstructured information and make something useable from it. After these improvements and some more checks for the data's integrity, I am going to reach out to other media organizations and online communities with this dataset.
+As such, I feel as though I am engaging with a core part of the Digital Humanities Ethos - access and transparency to important data. I am proud to be a part of the Digital Humanities community - the DH community and curriculum has equipped me with the skills I needed to get to where I am today. With this project, I hope to give something back to the community.
 
-Implementation excites me. Though I know I will run into barriers, developing my D3 skills and skills with web/database relations will be useful in the future. 
-
-Most importantly, I feel as though I am engaging with a core part of the Digital Humanities Ethos - access and transparency. I am proud to be a part of the Digital Humanities community - the DH community and curriculum has equipped me with the skills I needed to get to where I am today. With this project, I hope to give something back.
-
-
+This repository will continue to recieve updates. Thanks for reading.
 
 
 
