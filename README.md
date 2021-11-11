@@ -130,7 +130,7 @@ So, my goal became: build a bespoke tool for users to visualize the conversation
 
 ### An Interactive Prototype
 
-[VOSviewer Online](https://app.vosviewer.com/) is a powerful and flexible way to visualize network data online. As a part of my work in [UCLA's Holocaust and Genocide Studies Research Lab](), I developed a [tool to convert spreadsheet data into a VOSviewer readable file](https://github.com/jschaefer619/VOSviewer_triplet_translator).
+[VOSviewer Online](https://app.vosviewer.com/) is a powerful and flexible way to visualize network data online. As a part of my work in [UCLA's Holocaust and Genocide Studies Research Lab](https://elts.ucla.edu/person/todd-presner/), I developed a [tool to convert spreadsheet data into a VOSviewer readable file](https://github.com/jschaefer619/VOSviewer_triplet_translator).
 
 Here is a screenshot of an early visualization of a partial subset (~ 2000 entries) of this Parler data.
 
